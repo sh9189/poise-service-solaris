@@ -16,7 +16,7 @@
         </dependency>
         <exec_method timeout_seconds="60" type="method" name="start"
             exec="<%= @command %>">
-            <method_context>
+            <method_context working_directory="<%= @directory %>">
               <method_credential user="<%= @user %>" />
               <% if @environment %>
                 <method_environment>
@@ -34,7 +34,7 @@
         -->
         <exec_method timeout_seconds="60" type="method" name="stop"
             exec=":kill">
-            <method_context>
+            <method_context working_directory="<%= @directory %>">
               <method_credential user="<%= @user %>" />
               <% if @environment %>
                 <method_environment>
@@ -57,7 +57,7 @@
         -->
         <exec_method timeout_seconds="60" type="method" name="refresh"
             exec=":true">
-            <method_context>
+            <method_context working_directory="<%= @directory %>">
               <method_credential user="<%= @user %>" />
               <% if @environment %>
                 <method_environment>

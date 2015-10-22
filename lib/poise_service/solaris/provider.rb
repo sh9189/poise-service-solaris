@@ -48,7 +48,8 @@ module PoiseService
             name: new_resource.service_name,
             command: new_resource.command,
             user: new_resource.user,
-            environment: new_resource.environment
+            environment: new_resource.environment,
+            directory: new_resource.directory
           )
           notifies :run, 'execute[load service manifest]', :immediately
         end
