@@ -30,6 +30,4 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'poise-service', '~> 1.0'
 
   spec.add_development_dependency 'poise-boiler', '~> 1.0'
-
-  spec.metadata['halite_dependencies'] = ''
 end

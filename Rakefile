@@ -1,6 +1,9 @@
-require "bundler/gem_tasks"
-require "rspec/core/rake_task"
+#
+# Cookbook: poise-service-solaris
+# License: Apache 2.0
+#
+# Copyright 2015, Noah Kantrowitz
+# Copyright 2015, Bloomberg Finance L.P.
+#
 
-RSpec::Core::RakeTask.new(:spec)
-
-task :default => :spec
+require 'poise_boiler/rakefile'
