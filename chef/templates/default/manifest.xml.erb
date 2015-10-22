@@ -18,7 +18,7 @@
             exec="<%= @command %>">
             <method_context working_directory="<%= @directory %>">
               <method_credential user="<%= @user %>" />
-              <% if @environment %>
+              <% unless @environment.empty? %>
                 <method_environment>
                   <% @environment.each do |name,value| %>
                     <%= "<envvar name=\"#{name}\" value=\"#{value}\" />" %>
@@ -36,7 +36,7 @@
             exec=":kill">
             <method_context working_directory="<%= @directory %>">
               <method_credential user="<%= @user %>" />
-              <% if @environment %>
+              <% unless @environment.empty? %>
                 <method_environment>
                   <% @environment.each do |name,value| %>
                     <%= "<envvar name=\"#{name}\" value=\"#{value}\" />" %>
@@ -59,7 +59,7 @@
             exec=":true">
             <method_context working_directory="<%= @directory %>">
               <method_credential user="<%= @user %>" />
-              <% if @environment %>
+              <% unless @environment.empty? %>
                 <method_environment>
                   <% @environment.each do |name,value| %>
                     <%= "<envvar name=\"#{name}\" value=\"#{value}\" />" %>
