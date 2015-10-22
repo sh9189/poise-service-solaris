@@ -6,7 +6,7 @@
 # Copyright 2015, Bloomberg Finance L.P.
 #
 
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 gemspec path: File.expand_path('..', __FILE__)
 
 group :test, :development do
