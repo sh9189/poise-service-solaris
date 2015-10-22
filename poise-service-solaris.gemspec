@@ -13,11 +13,11 @@ require 'poise_service/solaris/version'
 Gem::Specification.new do |spec|
   spec.name = 'poise-service-solaris'
   spec.version = PoiseService::Solaris::VERSION
-  spec.authors = ['John Bellone', 'Shahul Khajamohideen']
-  spec.email = %w{jbellone@bloomberg.net skhajamohid1@bloomberg.net}
+  spec.authors = ['Shahul Khajamohideen']
+  spec.email = %w{skhajamohid1@bloomberg.net}
   spec.description = 'A Solaris provider for poise-service.'
   spec.summary = spec.description
-  spec.homepage = 'https://github.com/johnbellone/poise-service-solaris'
+  spec.homepage = 'https://github.com/sh9189/poise-service-solaris'
   spec.license = 'Apache 2.0'
 
   spec.files = `git ls-files`.split($RS)
