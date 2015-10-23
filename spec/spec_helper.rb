@@ -1,2 +1,10 @@
+#
+# Cookbook: poise-service-solaris
+# License: Apache 2.0
+#
+# Copyright 2015, Noah Kantrowitz
+# Copyright 2015, Bloomberg Finance L.P.
+#
+
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-require 'poise/service/solaris'
+require 'poise_service/solaris'

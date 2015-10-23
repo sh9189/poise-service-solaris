@@ -12,11 +12,6 @@ A Solaris provider for [poise-service](https://github.com/poise/poise-service).
 See [poise-service](https://github.com/poise/poise-service) for more information
 about usage and configuration. Add `poise-service-solaris` to a cookbook's
 dependencies to enable the plugin.
-## Sponsors
-
-Development sponsored by [Bloomberg](http://www.bloomberg.com/company/technology/).
-
-The Poise test server infrastructure is sponsored by [Rackspace](https://rackspace.com/).
 
 ## License
 
