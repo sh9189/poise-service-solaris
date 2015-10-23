@@ -13,7 +13,3 @@ branches:
     - master
 matrix:
   fast_finish: true
-install:
-    pip install codecov
-after_success:
-    codecov
