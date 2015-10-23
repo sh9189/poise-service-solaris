@@ -56,7 +56,9 @@ module PoiseService
 
         execute 'load service manifest' do
           action :nothing
-          command 'svcadm restart manifest-import'
+          # we synchrously disable and enable instead of
+          # calling restart to avoid timing problem
+          command 'svcadm disable -s manifest-import && svcadm enable -s manifest-import'
         end
       end
 
@@ -69,7 +71,9 @@ module PoiseService
 
         execute 'load service manifest' do
           action :nothing
-          command 'svcadm restart manifest-import'
+          # we synchrously disable and enable instead of
+          # calling restart to avoid timing problem
+          command 'svcadm disable -s manifest-import && svcadm enable -s manifest-import'
         end
       end
 

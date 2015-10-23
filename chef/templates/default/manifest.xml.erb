@@ -15,7 +15,7 @@
             <service_fmri value="svc:/milestone/multi-user"/>
         </dependency>
         <exec_method timeout_seconds="60" type="method" name="start"
-            exec="<%= @command %>">
+            exec="<%= @command.encode(:xml => :text) %>">
             <method_context working_directory="<%= @directory %>">
               <method_credential user="<%= @user %>" />
               <% unless @environment.empty? %>
