@@ -1,6 +1,6 @@
 # Poise Service Solaris Cookbook
 
-[![Build Status](https://img.shields.io/travis/sh9189/poise-service-solaris.svg)](https://travis-ci.org/poise/poise-service-solaris)
+[![Build Status](https://img.shields.io/travis/sh9189/poise-service-solaris.svg)](https://travis-ci.org/sh9189/poise-service-solaris)
 [![Gem Version](https://img.shields.io/gem/v/poise-service-solaris.svg)](https://rubygems.org/gems/poise-service-solaris)
 [![Cookbook Version](https://img.shields.io/cookbook/v/poise-service-solaris.svg)](https://supermarket.chef.io/cookbooks/poise-service-solaris)
 [![Coverage](https://img.shields.io/codecov/c/github/sh9189/poise-service-solaris.svg)](https://codecov.io/github/poise/poise-service-solaris)
