@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.name = 'poise-service-solaris'
   spec.version = PoiseService::Solaris::VERSION
   spec.authors = ['Shahul Khajamohideen']
-  spec.email = %w{skhajamohid1@bloomberg.net}
+  spec.email = %w(skhajamohid1@bloomberg.net)
   spec.description = 'A Solaris provider for poise-service.'
   spec.summary = spec.description
   spec.homepage = 'https://github.com/sh9189/poise-service-solaris'
@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
   spec.files = `git ls-files`.split($RS)
   spec.executables = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files = spec.files.grep(%r{^(test|spec|features)/})
-  spec.require_paths = %w{lib}
+  spec.require_paths = %w(lib)
 
   spec.add_dependency 'halite', '~> 1.0'
   spec.add_dependency 'poise', '~> 2.0'

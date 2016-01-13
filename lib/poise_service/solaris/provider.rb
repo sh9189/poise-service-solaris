@@ -19,7 +19,6 @@ module PoiseService
       include Chef::Mixin::ShellOut
       provides(:solaris_service)
 
-
       def self.provides_auto?(node, _)
         node['platform_family'] == 'solaris2'
       end
@@ -42,7 +41,7 @@ module PoiseService
 
         template manifest_file do
           source 'manifest.xml.erb'
-          cookbook 'poise-service-solaris' #poise needs cookbook name for template
+          cookbook 'poise-service-solaris' # poise needs cookbook name for template
           verify 'svccfg validate %{file}'
           variables(
             name: new_resource.service_name,
@@ -51,14 +50,14 @@ module PoiseService
             environment: new_resource.environment,
             directory: new_resource.directory
           )
-          notifies :run, 'execute[load service manifest]', :immediately
         end
 
         execute 'load service manifest' do
-          action :nothing
           # we synchrously disable and enable instead of
           # calling restart to avoid timing problem
           command 'svcadm disable -s manifest-import && svcadm enable -s manifest-import'
+          # svcs <service_name> returns 0 if service exists
+          not_if "svcs #{new_resource.service_name}"
         end
       end
 
@@ -66,14 +65,14 @@ module PoiseService
         Chef::Log.debug("Destroying solaris service #{new_resource.service_name}")
         file manifest_file do
           action :delete
-          notifies :run, 'execute[load service manifest]', :immediately
         end
 
         execute 'load service manifest' do
-          action :nothing
           # we synchrously disable and enable instead of
           # calling restart to avoid timing problem
           command 'svcadm disable -s manifest-import && svcadm enable -s manifest-import'
+          # svcs <service_name> returns 0 if service exists
+          only_if "svcs #{new_resource.service_name}"
         end
       end
 
