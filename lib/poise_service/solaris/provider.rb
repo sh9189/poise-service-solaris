@@ -19,6 +19,9 @@ module PoiseService
       include Chef::Mixin::ShellOut
       provides(:solaris_service)
 
+      # proritize this provider on solaris
+      Chef::Platform::ProviderPriorityMap.instance.priority(:poise_service, [self])
+
       def self.provides_auto?(node, _)
         node['platform_family'] == 'solaris2'
       end
