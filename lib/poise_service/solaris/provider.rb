@@ -3,7 +3,7 @@
 # License: Apache 2.0
 #
 # Copyright 2015, Noah Kantrowitz
-# Copyright 2015, Bloomberg Finance L.P.
+# Copyright 2015-2016, Bloomberg Finance L.P.
 #
 
 require 'chef/mash'
@@ -45,7 +45,7 @@ module PoiseService
         template manifest_file do
           source 'manifest.xml.erb'
           cookbook 'poise-service-solaris' # poise needs cookbook name for template
-          verify 'svccfg validate %{file}'
+          verify 'svccfg validate %{path}'
           variables(
             name: new_resource.service_name,
             command: new_resource.command,
@@ -59,10 +59,11 @@ module PoiseService
           # we synchrously disable and enable instead of
           # calling restart to avoid timing problem
           command 'svcadm disable -s manifest-import && svcadm enable -s manifest-import'
-          # svcs <service_name> returns 0 if service exists
-          not_if "svcs #{new_resource.service_name}"
+          # svcs -o STATE -H <service_name> returns online if service is up
+          not_if { `svcs -o STATE -H #{new_resource.service_name}`.strip == 'online' }
         end
       end
+
 
       def destroy_service
         Chef::Log.debug("Destroying solaris service #{new_resource.service_name}")
