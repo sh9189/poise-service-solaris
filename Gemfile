@@ -11,4 +11,5 @@ gemspec path: File.expand_path('..', __FILE__)
 
 group :test, :development do
   gem 'rubocop'
+  gem 'github_changelog_generator'
 end
