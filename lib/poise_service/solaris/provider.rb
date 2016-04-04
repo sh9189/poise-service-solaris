@@ -48,7 +48,7 @@ module PoiseService
           verify 'svccfg validate %{file}'
           variables(
             name: new_resource.service_name,
-            command: new_resource.command,
+            command: "#{nohup new_resource.command &}",
             user: new_resource.user,
             environment: new_resource.environment,
             directory: new_resource.directory
