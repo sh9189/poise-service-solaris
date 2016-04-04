@@ -1,8 +1,7 @@
 # Change Log
 
-## [Unreleased](https://github.com/sh9189/poise-service-solaris/tree/HEAD)
-
-[Full Changelog](https://github.com/sh9189/poise-service-solaris/compare/v0.1.5...HEAD)
+## [0.1.6](https://github.com/sh9189/poise-service-solaris/tree/0.1.6) (2016-04-04)
+[Full Changelog](https://github.com/sh9189/poise-service-solaris/compare/v0.1.5...0.1.6)
 
 **Merged pull requests:**
 
