@@ -64,6 +64,11 @@ module PoiseService
         end
       end
 
+      # on reload, restart the service
+      def action_reload
+        action_restart
+      end
+
       def destroy_service
         Chef::Log.debug("Destroying solaris service #{new_resource.service_name}")
         file manifest_file do
