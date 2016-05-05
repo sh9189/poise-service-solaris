@@ -66,8 +66,7 @@ module PoiseService
 
       # on reload, restart the service
       def action_reload
-        service_resource.load_current_resource
-        if service_resource.running
+        if service_resource.current_value.running
           Chef::Log.info("Reloading solaris service #{new_resource.service_name} by restarting")
           action_restart
         else
