@@ -1,5 +1,8 @@
 # Change Log
 
+## [v0.1.10](https://github.com/sh9189/poise-service-solaris/tree/v0.1.10) (2016-05-05)
+[Full Changelog](https://github.com/sh9189/poise-service-solaris/compare/v0.1.8...v0.1.10)
+
 ## [v0.1.8](https://github.com/sh9189/poise-service-solaris/tree/v0.1.8) (2016-04-05)
 [Full Changelog](https://github.com/sh9189/poise-service-solaris/compare/v0.1.7...v0.1.8)
 
