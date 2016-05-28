@@ -7,9 +7,10 @@
 #
 
 require 'chef/mash'
-
+require 'poise/backports'
 require 'poise_service/error'
 require 'poise_service/service_providers/base'
+
 
 module PoiseService
   module ServiceProviders
@@ -42,17 +43,8 @@ module PoiseService
       def create_service
         Chef::Log.debug("Creating solaris service #{new_resource.service_name}")
 
-        template manifest_file do
-          source 'manifest.xml.erb'
-          cookbook 'poise-service-solaris' # poise needs cookbook name for template
-          verify 'svccfg validate %{file}'
-          variables(
-            name: new_resource.service_name,
-            command: "nohup #{new_resource.command} &",
-            user: new_resource.user,
-            environment: new_resource.environment,
-            directory: new_resource.directory
-          )
+        service_template(manifest_file, 'manifest.xml.erb') do
+          verify "svccfg validate #{Poise::Backports::VERIFY_PATH}"
         end
 
         execute 'load service manifest' do
